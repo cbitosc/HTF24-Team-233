@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeHue - Order Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="homedec">
+    <header class="head2">
+        <h1 align="center">Order Products</h1>
+    </header>
+
+    <section class="order-container">
+        <div class="order-item">
+            <div class="item-content">
+                <img src="https://mydecorative.com/wp-content/uploads/2013/03/Modern-Bedroom-Designs-Ideas.jpeg" alt="Modern Bedroom Design">
+                <div class="item-info">
+                    <h6>Modern Bedroom Design</h6>
+                    <p>Price: $299.99</p>
+                </div>
+            </div>
+            <button class="order-button" onclick="addToCart('Modern Bedroom Design', 299.99)">Order Now</button>
+        </div>
+        
+        <div class="order-item">
+            <div class="item-content">
+                <img src="https://www.decorationlove.com/wp-content/uploads/2016/07/Comfortable-Living-Room-Decorating-Ideas.jpg" alt="Comfortable Living Room">
+                <div class="item-info">
+                    <h6>Comfortable Living Room</h6>
+                    <p>Price: $199.99</p>
+                </div>
+            </div>
+            <button class="order-button" onclick="addToCart('Comfortable Living Room', 199.99)">Order Now</button>
+        </div>
+        
+        <div class="order-item">
+            <div class="item-content">
+                <img src="https://i.pinimg.com/originals/13/65/3e/13653ea47a48b30b9201dde49c48de00.jpg" alt="Elegant Home Decor">
+                <div class="item-info">
+                    <h6>Elegant Home Decor</h6>
+                    <p>Price: $159.99</p>
+                </div>
+            </div>
+            <button class="order-button" onclick="addToCart('Elegant Home Decor', 159.99)">Order Now</button>
+        </div>
+        
+        <div class="order-item">
+            <div class="item-content">
+                <img src="https://i.pinimg.com/originals/46/12/15/4612159ea23e7ad9537b7c77168ba413.png" alt="Stylish Living Room">
+                <div class="item-info">
+                    <h6>Stylish Living Room</h6>
+                    <p>Price: $249.99</p>
+                </div>
+            </div>
+            <button class="order-button" onclick="addToCart('Stylish Living Room', 249.99)">Order Now</button>
+        </div>
+
+        <div class="order-item">
+            <div class="item-content">
+                <img src="https://www.thespruce.com/thmb/GtlHim5EsWERYoVi62TnWpu6JTA=/5472x3648/filters:fill(auto,1)/GettyImages-9261821821-5c69c1b7c9e77c0001675a49.jpg" alt="Chic Dining Room">
+                <div class="item-info">
+                    <h6>Chic Dining Room</h6>
+                    <p>Price: $349.99</p>
+                </div>
+            </div>
+            <button class="order-button" onclick="addToCart('Chic Dining Room', 349.99)">Order Now</button>
+        </div>
+
+        <div class="order-item">
+            <div class="item-content">
+                <img src="https://hawaiihome.me/wp-content/uploads/2016/09/iStock_88366291_MEDIUM-e1474656564299.jpg" alt="Modern Bathroom">
+                <div class="item-info">
+                    <h6>Modern Bathroom</h6>
+                    <p>Price: $199.99</p>
+                </div>
+            </div>
+            <button class="order-button" onclick="addToCart('Modern Bathroom', 199.99)">Order Now</button>
+        </div>
+
+        <div class="order-item">
+            <div class="item-content">
+                <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRcziYahO8dzhR4tLPVNTqRdNfHWIvARlhfUwEtLDoGBBNuTon5" alt="Cozy Bedroom">
+                <div class="item-info">
+                    <h6>Cozy Bedroom</h6>
+                    <p>Price: $259.99</p>
+                </div>
+            </div>
+            <button class="order-button" onclick="addToCart('Cozy Bedroom', 259.99)">Order Now</button>
+        </div>
+
+        <div class="order-item">
+            <div class="item-content">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTiN1_FjsVcJvyecvl0_RRmfk9VxowncEwg8Nu0d35TBBmy3Tua" alt="Luxurious Living Room">
+                <div class="item-info">
+                    <h6>Luxurious Living Room</h6>
+                    <p>Price: $299.99</p>
+                </div>
+            </div>
+            <button class="order-button" onclick="addToCart('Luxurious Living Room', 299.99)">Order Now</button>
+        </div>
+    </section>
+
+    <footer class="forder">
+        <a href="gallery.html">Back to Gallery</a>
+        <div id="cart" class="cart">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+        </div>
+    </footer>
+
+    <script>
+        const cart = [];
+
+        function addToCart(productName, productPrice) {
+            cart.push({ name: productName, price: productPrice });
+            updateCart();
+            alert(`${productName} has been added to your cart.`);
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                cartItems.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
